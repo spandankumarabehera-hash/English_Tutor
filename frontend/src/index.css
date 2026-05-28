@@ -1,0 +1,172 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+  background-color: #05070A;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #05070A;
+  color: #E2E8F0;
+  overflow-x: hidden;
+}
+
+/* Premium Futuristic Utilities */
+
+.bg-cyber-gradient {
+  background: radial-gradient(circle at 50% 50%, #0D121F 0%, #05070A 100%);
+}
+
+.bg-glow-purple {
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
+}
+
+.bg-glow-blue {
+  background: radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.12) 0%, transparent 50%);
+}
+
+.glass-card {
+  background: rgba(13, 17, 28, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-interactive:hover {
+  background: rgba(17, 24, 39, 0.85);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+  transform: translateY(-4px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 50%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #22D3EE 0%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #A78BFA 0%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+.micro-glow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.micro-glow-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.micro-glow-btn:hover::after {
+  opacity: 1;
+}
+
+/* Word highlight for corrected grammar */
+.correction-word-highlight {
+  position: relative;
+  background-color: rgba(239, 68, 68, 0.15);
+  border-bottom: 2px dashed #EF4444;
+  cursor: pointer;
+  padding: 0px 2px;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.correction-word-highlight:hover {
+  background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Pulse animation for voice */
+@keyframes micPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+.mic-pulse-active {
+  animation: micPulse 1.5s infinite;
+}
+
+/* Typing shimmer loader */
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  float: left;
+  margin: 0 3px;
+  background-color: #A5B4FC;
+  border-radius: 50%;
+  animation: bounce 1.3s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  }
+  40% { 
+    transform: scale(1.0);
+  }
+}
